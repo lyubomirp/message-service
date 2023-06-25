@@ -17,4 +17,9 @@ Expected message format is
    "type":"slack"
 }
 ```
+Any failed message with either be requeued, or logged in the DB if malformed, and Nack'd from the queue.
 
+Healthchecks for postgres and rabbitMQ are added on
+```
+/status
+```
