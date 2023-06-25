@@ -14,9 +14,10 @@ Expected message format is
    ],
    "subject":"Testing",
    "content":"Test Message Body",
-   "type":"slack"
+   "type":"email"
 }
 ```
+The recipients field can be omitted when sending a Slack message. We only need subject and content.
 Any failed message with either be requeued, or logged in the DB if malformed, and Nack'd from the queue.
 
 Healthchecks for postgres and rabbitMQ are added on
