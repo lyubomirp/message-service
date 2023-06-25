@@ -2,6 +2,12 @@
 
 A simple messaging service that connects to a RabbitMQ queue and consumes messages, and sends them via Slack/Email.
 
+To start all you need is to ```cp .env.example .env``` then provide a ```SENDER_MAIL``` and ```SENDER_PASS``` for gmail's smtp
+or register a slack bot, give it channel permissions and add ```SLACK_TOKEN``` and ```SLACK_CHANNEL_ID```
+
+After all the .env stuff is settled you can run ```docker-compose up -d``` and it should spin up your RabbitMQ, Postgres and Message Service
+You you can also just use the message service locally, just run ```go run main.go``` and change all ```host.docker.internal``` values to ```localhost```
+
 Expected message format is
 
 ```
