@@ -9,7 +9,7 @@ Expected message format is
    "recipients":[
       {
          "name":"Test",
-         "contact":"lpetkov44@yahoo.com"
+         "contact":"someemail@dir.bg"
       }
    ],
    "subject":"Testing",
