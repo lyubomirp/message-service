@@ -9,12 +9,13 @@ Expected message format is
    "recipients":[
       {
          "name":"Test",
-         "contact":"someemail@dir.bg"
+         "contact":"lpetkov44@yahoo.com"
       }
    ],
    "subject":"Testing",
-   "content":"Test Message Body",
-   "type":"email"
+   "content":"Test Message Body PLS SEND",
+   "type":"email",
+   "format":"plain/text"
 }
 ```
 The recipients field can be omitted when sending a Slack message. We only need subject and content.
