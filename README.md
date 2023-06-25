@@ -9,11 +9,11 @@ Expected message format is
    "recipients":[
       {
          "name":"Test",
-         "contact":"lpetkov44@yahoo.com"
+         "contact":"someemail@abv.bg"
       }
    ],
    "subject":"Testing",
-   "content":"Test Message Body PLS SEND",
+   "content":"Test Message Body",
    "type":"email",
    "format":"plain/text"
 }
