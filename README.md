@@ -26,7 +26,7 @@ Where
    - ```format``` is important mainly for emails, it's the format of the message (i.e. text/html, plain/text, multipart/alternative, etc.)
 
 The recipients field can be omitted when sending a Slack message. We only need subject and content.
-Any failed message with either be requeued, or logged in the DB if malformed, and Nack'd from the queue.
+Any failed message will either be requeued, or logged in the DB if malformed and Nack'd from the queue.
 
 Healthchecks for postgres and rabbitMQ are added on
 ```
