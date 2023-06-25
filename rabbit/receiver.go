@@ -3,14 +3,12 @@ package rabbit
 import (
 	"encoding/json"
 	"fmt"
+	amqp "github.com/rabbitmq/amqp091-go"
+	log "github.com/sirupsen/logrus"
 	"gorm.io/gorm"
 	"message-service/courier"
 	"message-service/helpers"
 	"message-service/types"
-	"time"
-
-	amqp "github.com/rabbitmq/amqp091-go"
-	log "github.com/sirupsen/logrus"
 )
 
 type Receiver struct {
@@ -67,7 +65,6 @@ func (receiver *Receiver) Consume(db *gorm.DB) {
 			case "email":
 				err = client.SendMessage(content)
 			case "slack":
-				time.Sleep(20 * time.Second)
 				err = slackClient.SendMessage(content)
 			}
 
