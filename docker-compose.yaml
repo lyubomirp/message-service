@@ -8,6 +8,8 @@ services:
     ports:
       - "5432:5432"
     restart: always
+    networks:
+      - message-service-network
 
   rabbitmq:
     container_name: rabbitmq
@@ -16,3 +18,22 @@ services:
       - "5672:5672"
       - "15672:15672"
     restart: always
+    networks:
+      - message-service-network
+
+  msg-service:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      postgres:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
+    ports:
+      - "8080:8080"
+    networks:
+      - message-service-network
+
+networks:
+  message-service-network:
